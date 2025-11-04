@@ -45,35 +45,33 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-accent/20 to-secondary/30">
-      <nav className="sticky top-0 z-50 backdrop-blur-lg bg-background/80 border-b border-border">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <h1 className="text-2xl font-bold text-primary">Портфолио</h1>
-            <div className="flex gap-6">
-              <button
-                onClick={() => setActiveTab('home')}
-                className={`transition-colors hover:text-primary ${activeTab === 'home' ? 'text-primary font-semibold' : 'text-muted-foreground'}`}
-              >
-                О себе
-              </button>
-              <button
-                onClick={() => setActiveTab('projects')}
-                className={`transition-colors hover:text-primary ${activeTab === 'projects' ? 'text-primary font-semibold' : 'text-muted-foreground'}`}
-              >
-                Проекты
-              </button>
-              <button
-                onClick={() => setActiveTab('contacts')}
-                className={`transition-colors hover:text-primary ${activeTab === 'contacts' ? 'text-primary font-semibold' : 'text-muted-foreground'}`}
-              >
-                Контакты
-              </button>
-            </div>
-          </div>
+      <nav className="fixed left-0 top-0 h-screen w-64 bg-background/95 backdrop-blur-lg border-r border-border z-50 flex flex-col">
+        <div className="p-6">
+          <h1 className="text-2xl font-bold text-primary">Портфолио</h1>
+        </div>
+        <div className="flex flex-col gap-2 px-4">
+          <button
+            onClick={() => setActiveTab('home')}
+            className={`text-left px-4 py-3 rounded-lg transition-all ${activeTab === 'home' ? 'bg-primary text-primary-foreground font-semibold' : 'text-muted-foreground hover:bg-accent hover:text-accent-foreground'}`}
+          >
+            О себе
+          </button>
+          <button
+            onClick={() => setActiveTab('projects')}
+            className={`text-left px-4 py-3 rounded-lg transition-all ${activeTab === 'projects' ? 'bg-primary text-primary-foreground font-semibold' : 'text-muted-foreground hover:bg-accent hover:text-accent-foreground'}`}
+          >
+            Проекты
+          </button>
+          <button
+            onClick={() => setActiveTab('contacts')}
+            className={`text-left px-4 py-3 rounded-lg transition-all ${activeTab === 'contacts' ? 'bg-primary text-primary-foreground font-semibold' : 'text-muted-foreground hover:bg-accent hover:text-accent-foreground'}`}
+          >
+            Контакты
+          </button>
         </div>
       </nav>
 
-      <main className="container mx-auto px-4 py-12">
+      <main className="ml-64 px-8 py-12">
         {activeTab === 'home' && (
           <div className="animate-fade-in space-y-8">
             <section className="text-center py-16">
@@ -298,8 +296,8 @@ const Index = () => {
         )}
       </main>
 
-      <footer className="border-t border-border mt-16 py-8">
-        <div className="container mx-auto px-4 text-center text-muted-foreground">
+      <footer className="ml-64 border-t border-border mt-16 py-8">
+        <div className="px-8 text-center text-muted-foreground">
           <p>&copy; 2024 Иван Петров. Все права защищены.</p>
         </div>
       </footer>
